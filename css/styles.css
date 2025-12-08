@@ -191,6 +191,10 @@ img {
     padding-right: var(--container-padding);
 }
 
+.section {
+    padding: var(--spacing-4xl) 0;
+}
+
 /* ============================================
    NAVIGATION
    ============================================ */
@@ -429,6 +433,100 @@ img {
 }
 
 /* ============================================
+   SECTION TITLES
+   ============================================ */
+
+.section-title {
+    text-align: center;
+    font-size: var(--font-size-3xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-2xl);
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+    border-radius: var(--radius-full);
+}
+
+/* ============================================
+   CONTROVERSY SECTION
+   ============================================ */
+
+.controversy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: start;
+}
+
+.controversy-text h3,
+.controversy-text h4 {
+    color: var(--color-primary-dark);
+    margin-top: var(--spacing-lg);
+}
+
+.argument-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.argument-list li {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background-color: var(--color-background-alt);
+    border-left: 4px solid var(--color-secondary);
+    border-radius: var(--radius-sm);
+}
+
+.argument-list strong {
+    color: var(--color-primary-dark);
+}
+
+.controversy-visual {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.stat-box {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-text-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.stat-number {
+    display: block;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.stat-unit {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 
@@ -588,6 +686,25 @@ img {
     .submenu a:hover {
         background-color: var(--color-primary-ultra-light);
         color: var(--color-primary-dark);
+    }
+
+    /* Layout adjustments */
+    .hero {
+        min-height: 400px;
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .controversy-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
     }
 }
 
