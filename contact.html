@@ -76,6 +76,203 @@
 
         <!-- Main content -->
         <main class="main-content">
+            <!-- Contact form section -->
+            <section id="formulaire" class="section">
+                <div class="container">
+                    <div class="form-wrapper">
+                        <div class="form-intro">
+                            <h2>Formulaire de Contact</h2>
+                            <p>
+                                Remplissez le formulaire ci-dessous et nous vous recontacterons dans les plus brefs délais.
+                                Tous les champs marqués d'un astérisque (*) sont obligatoires.
+                            </p>
+                        </div>
+
+                        <!-- Contact form with HTML5 validation -->
+                        <form class="contact-form" action="https://webinfo.iutmontp.univ-montp2.fr/~eturosenfeld/php_pour_TD5/exempleTraitement.php" method="post">
+                            <!-- Personal information fieldset -->
+                            <fieldset class="form-fieldset">
+                                <legend>Informations Personnelles</legend>
+
+                                <div class="form-group">
+                                    <label for="nom">Nom *</label>
+                                    <input
+                                        type="text"
+                                        id="nom"
+                                        name="nom"
+                                        placeholder="Ex: Dupont"
+                                        required
+                                        minlength="2"
+                                        maxlength="50"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="prenom">Prénom *</label>
+                                    <input
+                                        type="text"
+                                        id="prenom"
+                                        name="prenom"
+                                        placeholder="Ex: Marie"
+                                        required
+                                        minlength="2"
+                                        maxlength="50"
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Adresse Email *</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Ex: marie.dupont@example.com"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="code_postal">Code Postal *</label>
+                                        <input
+                                            type="text"
+                                            id="code_postal"
+                                            name="code_postal"
+                                            placeholder="Ex: 34000"
+                                            required
+                                            pattern="[0-9]{5}"
+                                            title="Le code postal doit contenir 5 chiffres"
+                                        >
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="pays">Pays *</label>
+                                        <select id="pays" name="pays" required>
+                                            <option value="">-- Sélectionnez un pays --</option>
+                                            <option value="france">France</option>
+                                            <option value="belgique">Belgique</option>
+                                            <option value="suisse">Suisse</option>
+                                            <option value="luxembourg">Luxembourg</option>
+                                            <option value="canada">Canada</option>
+                                            <option value="autre">Autre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- How did you hear about us fieldset -->
+                            <fieldset class="form-fieldset">
+                                <legend>Comment nous avez-vous connu ?</legend>
+                                <p class="fieldset-description">Vous pouvez sélectionner plusieurs réponses</p>
+
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input
+                                            type="checkbox"
+                                            id="source_reseaux"
+                                            name="source[]"
+                                            value="reseaux_sociaux"
+                                        >
+                                        <label for="source_reseaux">Réseaux sociaux</label>
+                                    </div>
+
+                                    <div class="checkbox-item">
+                                        <input
+                                            type="checkbox"
+                                            id="source_moteur"
+                                            name="source[]"
+                                            value="moteur_recherche"
+                                        >
+                                        <label for="source_moteur">Moteur de recherche</label>
+                                    </div>
+
+                                    <div class="checkbox-item">
+                                        <input
+                                            type="checkbox"
+                                            id="source_bouche"
+                                            name="source[]"
+                                            value="bouche_oreille"
+                                        >
+                                        <label for="source_bouche">Bouche à oreille</label>
+                                    </div>
+
+                                    <div class="checkbox-item">
+                                        <input
+                                            type="checkbox"
+                                            id="source_publicite"
+                                            name="source[]"
+                                            value="publicite"
+                                        >
+                                        <label for="source_publicite">Publicité</label>
+                                    </div>
+
+                                    <div class="checkbox-item">
+                                        <input
+                                            type="checkbox"
+                                            id="source_presse"
+                                            name="source[]"
+                                            value="presse"
+                                        >
+                                        <label for="source_presse">Article de presse</label>
+                                    </div>
+
+                                    <div class="checkbox-item">
+                                        <input
+                                            type="checkbox"
+                                            id="source_autre"
+                                            name="source[]"
+                                            value="autre"
+                                        >
+                                        <label for="source_autre">Autre</label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <!-- Contact preferences fieldset -->
+                            <fieldset class="form-fieldset">
+                                <legend>Préférences de Contact</legend>
+
+                                <div class="form-group">
+                                    <label for="date_contact">Date souhaitée pour être recontacté *</label>
+                                    <input
+                                        type="date"
+                                        id="date_contact"
+                                        name="date_contact"
+                                        required
+                                        min="2025-12-09"
+                                    >
+                                    <small>Veuillez sélectionner une date à partir de demain</small>
+                                </div>
+                            </fieldset>
+
+                            <!-- Message fieldset -->
+                            <fieldset class="form-fieldset">
+                                <legend>Votre Message</legend>
+
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea
+                                        id="message"
+                                        name="message"
+                                        rows="8"
+                                        placeholder="Ex: Je souhaiterais obtenir plus d'informations sur le reconditionné et son impact environnemental..."
+                                        required
+                                        minlength="10"
+                                        maxlength="2000"
+                                    ></textarea>
+                                    <small>Minimum 10 caractères, maximum 2000 caractères</small>
+                                </div>
+                            </fieldset>
+
+                            <!-- Submit buttons -->
+                            <div class="form-actions">
+                                <button type="reset" class="btn-secondary">Réinitialiser</button>
+                                <button type="submit" class="btn-primary">Envoyer le message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <!-- Footer -->
