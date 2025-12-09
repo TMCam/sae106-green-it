@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* ============================================
    CSS VARIABLES - Brand Colors & Design System
    ============================================ */
@@ -497,7 +499,7 @@ img {
 }
 
 .definition-list li::before {
-    content: '✓';
+    content: '\2713';
     position: absolute;
     left: 0;
     color: var(--color-secondary);
