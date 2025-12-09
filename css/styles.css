@@ -104,6 +104,7 @@ html {
     font-size: 16px;
 
     overflow-x: hidden;
+    scroll-padding-top: calc(var(--nav-height));
 }
 
 body {
@@ -191,6 +192,10 @@ img {
     margin-right: auto;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
+}
+
+.main-content {
+    min-height: calc(100vh - var(--nav-height));
 }
 
 .section {
