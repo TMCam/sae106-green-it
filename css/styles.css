@@ -501,7 +501,7 @@ img {
 }
 
 .timeline-container:hover .timeline-arrow {
-    transform: translateX(10px);
+    transform: translateX(var(--spacing-sm));
 }
 
 /* Controversy section */
